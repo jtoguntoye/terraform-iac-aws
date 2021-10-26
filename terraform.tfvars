@@ -18,7 +18,9 @@ vpc_name = "main_vpc"
 
 public_subnet_tag = "value"
 
+eip_name = "nat_eip"
 
+nat_gw = "nat_gw"
 
 tags = {
     Environment = "production"

@@ -39,6 +39,14 @@
     variable "vpc_name" {
       default = "vpc_name"
     }
+
     variable "public_subnet_tag" {
       default = ""
+    }
+
+    variable "eip_name" {
+    }
+    
+    variable "nat_gw" {
+      
     }
