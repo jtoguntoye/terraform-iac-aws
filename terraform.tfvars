@@ -11,3 +11,18 @@ enable_dns_hostnames = "true"
 enable_dns_support = "true"
 
 preferred_number_of_public_subnets = 2
+
+preferred_number_of_private_subnets = 2
+
+vpc_name = "main_vpc"
+
+public_subnet_tag = "value"
+
+
+
+tags = {
+    Environment = "production"
+    Owner-Email = "joeloguntoye@gmail.com"
+    Managed-By  = "Terraform"
+    Billing-Account = "384543527682"    
+}
