@@ -22,6 +22,10 @@ eip_name = "nat_eip"
 
 nat_gw = "nat_gw"
 
+private-rtb-name = "kiff-rtb"
+
+public-rtb-name = "kiff-pub-rtb"
+
 tags = {
     Environment = "production"
     Owner-Email = "joeloguntoye@gmail.com"

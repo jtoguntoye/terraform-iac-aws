@@ -46,7 +46,12 @@
 
     variable "eip_name" {
     }
-    
-    variable "nat_gw" {
-      
+
+    variable "nat_gw" {  
+    }
+
+    variable "private-rtb-name" {
+    }
+
+    variable "public-rtb-name" {
     }
