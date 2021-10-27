@@ -10,6 +10,13 @@ resource "aws_route_table" "private-rtb" {
     )
 }
 
+# create a route in the private route table
+resource "aws_route" "private-rtb-route" {
+    route_table_id = aws_route_table.private-rtb.id
+    destination_cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat.id
+
+}
 
 #associate all private-A subnets to the private route table
 resource "aws_route_table_association" "private-subnets-assoc-A" {
