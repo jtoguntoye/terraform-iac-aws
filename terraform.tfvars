@@ -26,8 +26,10 @@ private-rtb-name = "kiff-rtb"
 
 public-rtb-name = "kiff-pub-rtb"
 
+ext-alb-sg-name = "kiff-ext-alb-sg"
+
 tags = {
-    Environment = "production"
+    Environment = "Dev"
     Owner-Email = "joeloguntoye@gmail.com"
     Managed-By  = "Terraform"
     Billing-Account = "384543527682"    

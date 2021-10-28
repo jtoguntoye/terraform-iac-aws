@@ -55,3 +55,6 @@
 
     variable "public-rtb-name" {
     }
+
+    variable "ext-alb-sg-name" {
+    }
