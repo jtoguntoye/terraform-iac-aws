@@ -115,8 +115,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
     vpc_id = aws_vpc.main.id
 }
 
-# create a listener for the wordpress target group which will be the default 
-
+# ---create a listener for the wordpress target group which will be the default --- 
 resource "aws_lb_listener" "web_listener" {
  load_balancer_arn = aws_lb.ialb.arn
  port = 443

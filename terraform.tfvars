@@ -28,6 +28,10 @@ public-rtb-name = "kiff-pub-rtb"
 
 ext-alb-sg-name = "kiff-ext-alb-sg"
 
+ami = "ami-09e67e426f25ce0d7"
+
+keypair = "devops"
+
 tags = {
     Environment = "Dev"
     Owner-Email = "joeloguntoye@gmail.com"
