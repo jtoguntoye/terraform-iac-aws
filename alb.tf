@@ -53,7 +53,7 @@ resource "aws_lb_listener" "nginx-listener" {
   }
 }
 
-# create an internal Application Load Balancer for webservers
+# create an internal Application Load Balancer for the webservers
 
 resource "aws_lb" "ialb" {
     name = "ialb"

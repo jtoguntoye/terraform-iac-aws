@@ -32,9 +32,15 @@ ami = "ami-09e67e426f25ce0d7"
 
 keypair = "devops"
 
+account_no = "384543527682"
+
 tags = {
     Environment = "Dev"
     Owner-Email = "joeloguntoye@gmail.com"
     Managed-By  = "Terraform"
     Billing-Account = "384543527682"    
 }
+
+master-username = "joel"
+
+master-password = "joel1234"

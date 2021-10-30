@@ -70,3 +70,19 @@
     description  = "keypair for the instances"
 
   }
+
+  variable "account_no" {
+      type = string
+      description = "AWS account number"
+    
+  }
+
+  variable master-username {
+      type = string
+      description = "kiff-db master username"
+  }
+
+  variable master-password {
+      type = string
+      description = "kiff-db master password"
+  }
