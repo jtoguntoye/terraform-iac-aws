@@ -6,7 +6,7 @@ resource "aws_acm_certificate" "kiff-web" {
     validation_method = "DNS"
 }
 
-# creating the hosted zone
+# calling the hosted zone created for the domain name
 data "aws_route53_zone" "kiff-web" {
     name = "kiff-web.space"
     private_zone = false

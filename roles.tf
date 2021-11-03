@@ -25,7 +25,7 @@ resource "aws_iam_role" "ec2_instance_role" {
 
 # create an iam policy to be attached to the iam role
 resource "aws_iam_policy" "policy" {
-  name        = "ec2_instance_policy"
+  name = "ec2_instance_policy"
   description = "A test policy"
   policy = jsonencode({
     Version = "2012-10-17"
@@ -60,3 +60,4 @@ resource "aws_iam_instance_profile" "instProfile" {
     name = "aws_instance_profile_test"
     role = aws_iam_role.ec2_instance_role.name
 }
+

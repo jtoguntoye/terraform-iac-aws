@@ -28,7 +28,7 @@ public-rtb-name = "kiff-pub-rtb"
 
 ext-alb-sg-name = "kiff-ext-alb-sg"
 
-ami = "ami-09e67e426f25ce0d7"
+ami =  "ami-0f7cd40eac2214b37"
 
 keypair = "devops"
 
