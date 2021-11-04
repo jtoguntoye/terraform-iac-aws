@@ -65,6 +65,13 @@
   description = "AMI ID for the launch template"
   }
   
+  variable "images" {
+      type = map(string)
+      default = {
+          eu-west-3 = ""
+      }
+    
+  }
   variable "keypair" {
     type = string
     description  = "keypair for the instances"

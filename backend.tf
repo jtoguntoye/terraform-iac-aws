@@ -2,6 +2,7 @@ resource "aws_s3_bucket" "terraform_State" {
     bucket = "joekiff-dev-terraform-bucket"
     acl = "private"
     
+    force_destroy = true
     # enable versioning 
     versioning {
       enabled = true

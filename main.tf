@@ -2,6 +2,17 @@
         region = var.region
     }
 
+    #configure terraform s3 backend
+    terraform{
+        backend "s3" {
+            bucket = "joekiff-dev-terraform-bucket"
+            key = "global/s3/terraform.tfstate"
+            region = "eu-west-3"
+            dynamodb_table = "terraform-locks"
+          
+        }
+    }
+
 # create VPC
     resource "aws_vpc" "main" {
         cidr_block = var.vpc_cidr
