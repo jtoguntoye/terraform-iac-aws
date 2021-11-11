@@ -1,4 +1,19 @@
-resource "aws_s3_bucket" "terraform_State" {
+# terraform{
+#   backend "s3" {
+#     bucket = "joekiff-dev-terrraform-bucket"
+#     key =  "global/s3/terraform.tfstate"
+#     region =  "eu-west-3"
+#     dynamodb_table =  "terraform-locks"
+#     encrypt = true
+#   }
+# }
+terraform {
+  backend "local" {
+    path = "./terraform.tfstate"
+  }
+}
+
+resource "aws_s3_bucket" "terraform_state" {
     bucket = "joekiff-dev-terraform-bucket"
     acl = "private"
     

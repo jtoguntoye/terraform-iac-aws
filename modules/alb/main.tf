@@ -1,14 +1,14 @@
 #create external load balancer
 resource "aws_lb" "ext-alb" {
-    name = "ext-alb"
+    name = var.ext-alb
     internal = false
     security_groups = [
-        aws_security_group.ext-alb-sg.id,
+        var.ext-alb-sg-id,
     ]
 
     subnets = [
-        aws_subnet.public[0].id,
-        aws_subnet.public[1].id
+        var.public-subnet1-id,
+        var.public-subnet2-id
     ]
 
     tags = merge (
@@ -37,7 +37,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
   port = 443
   protocol = "HTTPS"
  target_type = "instance"
- vpc_id = aws_vpc.main.id
+ vpc_id = var.vpc_id
 }
 
 # create a listener for the target group
@@ -45,7 +45,7 @@ resource "aws_lb_listener" "nginx-listener" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port = 443
   protocol = "HTTPS"
-  certificate_arn = aws_acm_certificate_validation.kiff-web.certificate_arn
+  certificate_arn = var.certificate-arn
 
   default_action {
     type = "forward"
@@ -53,18 +53,21 @@ resource "aws_lb_listener" "nginx-listener" {
   }
 }
 
+
+
 # create an internal Application Load Balancer for the webservers
 
 resource "aws_lb" "ialb" {
     name = "ialb"
     internal = true
     security_groups = [
-        aws_security_group.int-alb-sg.id
+        var.int-lb-sg-id
+        
     ]
 
     subnets = [
-        aws_subnet.private-A[0].id,
-        aws_subnet.private-A[1].id
+        var.private-subnet1-id,
+        var.private-subnet2-id
     ]
 
     tags = merge (
@@ -94,7 +97,7 @@ resource "aws_lb_target_group" "wordpress-tgt" {
     port = 443
     protocol = "HTTPS"
     target_type = "instance"
-    vpc_id = aws_vpc.main.id
+    vpc_id = var.vpc_id
 }
 
 # target group for tooling
@@ -112,7 +115,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
     port = 443
     protocol = "HTTPS"
     target_type = "instance"
-    vpc_id = aws_vpc.main.id
+    vpc_id = var.vpc_id
 }
 
 # ---create a listener for the wordpress target group which will be the default --- 
@@ -120,7 +123,7 @@ resource "aws_lb_listener" "web_listener" {
  load_balancer_arn = aws_lb.ialb.arn
  port = 443
  protocol = "HTTPS"
- certificate_arn = aws_acm_certificate_validation.kiff-web.certificate_arn
+ certificate_arn = var.certificate-arn
 
  default_action {
    type = "forward"

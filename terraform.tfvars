@@ -41,6 +41,6 @@ tags = {
     Billing-Account = "384543527682"    
 }
 
-master-username = "joel"
+master_username = "joel"
 
-master-password = "joel1234"
+master_password = "joel1234"

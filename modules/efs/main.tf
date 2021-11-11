@@ -42,15 +42,15 @@ resource "aws_efs_file_system" "kiff-efs" {
 # set the first mount target for the efs 
 resource "aws_efs_mount_target" "mount-subnet-a" {
     file_system_id = aws_efs_file_system.kiff-efs.id
-    subnet_id =  aws_subnet.private-A[0].id
-    security_groups = [aws_security_group.datalayer-sg.id]
+    subnet_id =  var.private_subnet1_id
+    security_groups = [var.datalayer_sg_id]
 } 
 
 # set the second mount target for the efs 
 resource "aws_efs_mount_target" "mount-subnet-b" {
     file_system_id = aws_efs_file_system.kiff-efs.id
-    subnet_id =  aws_subnet.private-A[1].id
-    security_groups = [aws_security_group.datalayer-sg.id]
+    subnet_id =  var.private_subnet2_id
+    security_groups = [var.datalayer_sg_id]
 } 
 
 # create access point for wordpress

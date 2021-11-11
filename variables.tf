@@ -84,12 +84,12 @@
     
   }
 
-  variable master-username {
+  variable master_username {
       type = string
       description = "kiff-db master username"
   }
 
-  variable master-password {
+  variable master_password {
       type = string
       description = "kiff-db master password"
   }
